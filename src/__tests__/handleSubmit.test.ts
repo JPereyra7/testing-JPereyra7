@@ -1,4 +1,4 @@
-import * as displaynoresult from "../ts/displayNoResult";
+import * as displayNoResult from "../ts/displayNoResult";
 import { IMovie } from "../ts/models/Movie";
 import { handleSubmit } from "../handleSubmit"; 
 import * as movieService from "../ts/services/movieService";
@@ -12,7 +12,7 @@ describe("Testing the handleSubmit functionality", () => {
 
   beforeEach(() => {
     mockCreateHtml = jest.spyOn(createHtml, "createHtml");
-    mockDisplayNoResult = jest.spyOn(displaynoresult, "displayNoResult");
+    mockDisplayNoResult = jest.spyOn(displayNoResult, "displayNoResult");
   });
 
   afterEach(() => {
