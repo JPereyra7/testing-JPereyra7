@@ -1,18 +1,38 @@
 import { IMovie } from "../../models/Movie";
 
-const peliculas: IMovie[] = [
-  { Title: "Star", imdbID: "test", Type: "test", Poster: "testtest", Year: "test" },
+export const movies: IMovie[] = [
+  {
+    Title: "Aquaman",
+    imdbID: "14540",
+    Type: "Action",
+    Poster: "aquaman.jpg",
+    Year: "2019",
+  },
   {
     Title: "Hobbit",
-    imdbID: "test",
-    Type: "test",
-    Poster: "testtest",
-    Year: "test",
+    imdbID: "1452",
+    Type: "Action",
+    Poster: "hobbit.jpg",
+    Year: "2018",
+  },
+  {
+    Title: "Lord of the Rings",
+    imdbID: "14540",
+    Type: "Action",
+    Poster: "aquaman.jpg",
+    Year: "2019",
+  },
+  {
+    Title: "Star Wars",
+    imdbID: "1452",
+    Type: "Action",
+    Poster: "hobbit.jpg",
+    Year: "2018",
   },
 ];
 
 export const getData = async (): Promise<IMovie[]> => {
   return new Promise((resolve) => {
-    resolve(peliculas);
+    resolve(movies);
   });
 };

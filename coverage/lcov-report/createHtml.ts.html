@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for functions.ts</title>
+    <title>Code coverage report for createHtml.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="prettify.css" />
     <link rel="stylesheet" href="base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="index.html">All files</a> functions.ts</h1>
+        <h1><a href="index.html">All files</a> createHtml.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.71% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/14</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.71% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>6/7</span>
+                <span class='fraction'>0/0</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">88.88% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>8/9</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
@@ -80,39 +80,51 @@
 <a name='L15'></a><a href='#L15'>15</a>
 <a name='L16'></a><a href='#L16'>16</a>
 <a name='L17'></a><a href='#L17'>17</a>
-<a name='L18'></a><a href='#L18'>18</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { IMovie } from "./models/Movie";
 &nbsp;
-export const movieSort = (movies: IMovie[], desc: boolean = true) =&gt; {
-  return movies.sort((a: IMovie, b: IMovie) =&gt; {
-    if (desc) {
-      if (a.Title &gt; b.Title) return 1;
-      if (a.Title &lt; b.Title) return -1;
+export const createHtml = (movies: IMovie[], container: HTMLDivElement) =&gt; {
+  for (let i = 0; i &lt; movies.length; i++) {
+    let movie = document.createElement("div");
+    let title = document.createElement("h3");
+    let img = document.createElement("img");
 &nbsp;
-      return 0;
-    } else {
-      <span class="missing-if-branch" title="if path not taken" >I</span>if (a.Title &gt; b.Title) <span class="cstat-no" title="statement not covered" >return -1;</span>
-      if (a.Title &lt; b.Title) return 1;
+    //Vi kan testa dessa o se om dem är appendade till ovan
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      return 0;</span>
-    }
-  });
+    movie.classList.add("movie");
+    title.innerHTML = movies[i].Title;
+    img.src = movies[i].Poster;
+    img.alt = movies[i].Title;
+&nbsp;
+    movie.appendChild(title);
+    movie.appendChild(img);
+&nbsp;
+    container.appendChild(movie);
+  }
 };
 &nbsp;</pre></td></tr></table></pre>
 
