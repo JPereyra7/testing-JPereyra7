@@ -6,8 +6,6 @@ export const createHtml = (movies: IMovie[], container: HTMLDivElement) => {
     let title = document.createElement("h3");
     let img = document.createElement("img");
 
-    //Vi kan testa dessa o se om dem är appendade till ovan
-
     movie.classList.add("movie");
     title.innerHTML = movies[i].Title;
     img.src = movies[i].Poster;

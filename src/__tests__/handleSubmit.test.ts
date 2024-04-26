@@ -1,6 +1,6 @@
 import * as displayNoResult from "../ts/displayNoResult";
 import { IMovie } from "../ts/models/Movie";
-import { handleSubmit } from "../handleSubmit"; 
+import { handleSubmit } from "../ts/handleSubmit";
 import * as movieService from "../ts/services/movieService";
 import * as createHtml from "../ts/createHtml";
 

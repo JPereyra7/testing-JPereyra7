@@ -1,5 +1,5 @@
 import { IMovie } from "./models/Movie";
-import { handleSubmit } from "../handleSubmit";
+import { handleSubmit } from "./handleSubmit";
 
 export let movies: IMovie[] = [];
 
@@ -11,4 +11,3 @@ export const init = () => {
   });
 };
 export { handleSubmit };
-

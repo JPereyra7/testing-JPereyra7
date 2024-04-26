@@ -1,7 +1,7 @@
-import { createHtml } from "./ts/createHtml";
-import { displayNoResult } from "./ts/displayNoResult";
-import { IMovie } from "./ts/models/Movie";
-import { getData } from "./ts/services/movieService";
+import { createHtml } from "./createHtml";
+import { displayNoResult } from "./displayNoResult";
+import { IMovie } from "./models/Movie";
+import { getData } from "./services/movieService";
 
 let movies: IMovie[] = [];
 
@@ -15,7 +15,7 @@ export async function handleSubmit() {
   container.innerHTML = "";
 
   try {
-    movies = await getData(searchText); //Vet inte hur man ska importa
+    movies = await getData(searchText);
 
     if (movies.length > 0) {
       createHtml(movies, container);
